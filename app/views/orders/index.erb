@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Orders</title>
+</head>
+<body>
+	<h1>Current orders</h1>
+	<p><a href='/'>Return to Homepage</a></p>
+
+	<h3 style=""><a href="/orders/new">Place a new Order</a><h3>
+
+	<% @orders.each do |order| %>
+	<div style="padding-bottom: 10px; padding-left: 50px; width: 25%;">
+		<hr/>
+		<h3><a href="/orders/<%= order.id %>">Order ID: <%= order.id %></a></h3>
+		<p>Customer: <%= order.customer.name %></p>
+		<p>Food Ordered: <%= order.food.name %></p>
+	</div>
+	<% end %>
+
+</body>
+</html>

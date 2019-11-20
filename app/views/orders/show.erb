@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order # <%=@order.id %></title>
+</head>
+<body>
+	<h1>Order # <%=@order.id %></h1>
+	<h3>Customer: <%=@order.customer.name %></h3>
+	<h3>Food: <%=@order.food.name %></h3>
+
+	<p><a href="/orders/<%=@order.id %>/edit">Edit this order</a></p>
+
+	<form action="/orders/<%=@order.id%>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" name="delete" value="Delete this Order">
+	</form>
+
+	<p><a href="/orders">View All Orders</a></p>
+</body>
+</html>
