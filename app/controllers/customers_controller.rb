@@ -34,7 +34,9 @@ class CustomersController < Sinatra::Base
 	end
 
 	delete '/customers/:id' do 
-		Customer.destroy(params[:id])
+		customer = Customer.find(params[:id])
+		customer.food_customers.destroy_all
+		customer.destroy
 		redirect '/customers'
 	end
 
