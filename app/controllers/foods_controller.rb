@@ -36,7 +36,6 @@ class FoodsController < Sinatra::Base
 
 	delete '/foods/:id' do 
 		food = Food.find(params[:id])
-		binding.pry
 		food.food_customers.destroy_all
 		food.destroy
 		redirect "/foods"

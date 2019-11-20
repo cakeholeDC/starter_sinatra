@@ -9,7 +9,7 @@
 		<h1>Please Select a Customer</h1>
 		
 		<label for="customer_id">Customer Name</label>
-		<select name="customer_id">
+		<select name="customer_id" style="height: 25px;">
 			<% @customers.each do |customer| %>
 				<option value=<%= customer.id%> ><%=customer.name%></option>
 			<% end %>
@@ -17,7 +17,7 @@
 		
 		<h2>Please Select an item to order</h2>
 		<label for="food_id">Food: </label>
-		<select name="food_id">
+		<select name="food_id" style="height: 25px;">
 			<% @foods.each do |food| %>
 				<option value=<%= food.id%> ><%=food.name%></option>
 			<% end %>
