@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= @food.name %></title>
+</head>
+<body>
+	<h1><%= @food.name %></h1>
+	<h2>Kind: <%= @food.kind %></h2>
+	<h3>Price: <%= @food.price %></h3>
+
+	<p><a href="/foods/<%=@food.id%>/edit">Edit this item</a></p>
+
+	<form action="/foods/<%=@food.id%>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" name="delete" value="Delete this item">
+	</form>
+
+	<p><a href="/foods">Back to Menu</a></p>
+
+</body>
+</html>

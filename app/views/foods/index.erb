@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+</head>
+<body>
+	<h1>Our Menu Items</h1>
+	<ul>
+		<% @foods.each do |food| %>
+		<li>
+			<a href="/foods/<%=food.id%>"><%= food.name.titlecase %></a>
+		</li>
+		<% end %>
+	</ul>
+
+	<p><a href="/foods/new">Create a menu item</a></p>
+
+	<p><a href='/'>Back to Homepage</a></p>
+</body>
+</html>
