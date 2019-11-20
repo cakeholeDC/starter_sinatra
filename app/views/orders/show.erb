@@ -5,8 +5,8 @@
 </head>
 <body>
 	<h1>Order # <%=@order.id %></h1>
-	<h3>Customer: <%=@order.customer.name %></h3>
-	<h3>Food: <%=@order.food.name %></h3>
+	<h3>Customer: <a href="/customers/<%=@order.customer.id %>"><%=@order.customer.name %></a></h3>
+	<h3>Food: <a href="/foods/<%=@order.food.id%>"><%=@order.food.name %></a></h3>
 
 	<p><a href="/orders/<%=@order.id %>/edit">Edit this order</a></p>
 
@@ -16,5 +16,7 @@
 	</form>
 
 	<p><a href="/orders">View All Orders</a></p>
+
+	<p><a href='/'>Return to Homepage</a></p>
 </body>
 </html>

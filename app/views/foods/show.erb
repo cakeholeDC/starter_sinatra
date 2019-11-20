@@ -8,6 +8,18 @@
 	<h2>Kind: <%= @food.kind %></h2>
 	<h3>Price: <%= @food.price %></h3>
 
+	<p>Pending Orders</p>
+	<% @food.food_customers.each do |order| %>
+	<div style="padding-bottom: 10px; padding-left: 25px; width: 20%;">
+		<hr/>
+		<h3><a href="/orders/<%= order.id %>">Order ID: <%= order.id %></a></h3>
+		<p>Customer: <%= order.customer.name %></p>
+	</div>
+	<% end %>
+	<div style="padding-bottom: 10px; padding-left: 25px; width: 20%;">
+		<hr/>
+	</div>
+
 	<p><a href="/foods/<%=@food.id%>/edit">Edit this item</a></p>
 
 	<form action="/foods/<%=@food.id%>" method="POST">
@@ -16,6 +28,8 @@
 	</form>
 
 	<p><a href="/foods">Back to Menu</a></p>
+
+	<p><a href='/'>Return to Homepage</a></p>
 
 </body>
 </html>
