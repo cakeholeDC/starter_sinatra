@@ -21,7 +21,7 @@
 		<label for="food_id">Food: </label>
 		<select name="food_id">
 			<% @foods.each do |food| %>
-				<option value=<%= food.id%> <%='selected' if @order.food.id==food.id %> ><%=food.name%></option>
+				<option value=<%= food.id%> <%='selected' if @order.food.id==food.id %> ><%=food.name.titlecase%></option>
 			<% end %>
 		</select>
 		
